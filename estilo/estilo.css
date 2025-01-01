@@ -11,7 +11,7 @@ body {
 .player-container {
     flex: 3;
     padding: 20px;
-    background-color: #f4f4f9;
+    background: linear-gradient(to bottom, #b31e9d, #0b7d7b);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@ video {
 
 .lista-canais {
     flex: 1;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #eea8e3, #435e68);
     overflow-y: auto;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
