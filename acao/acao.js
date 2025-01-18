@@ -1,8 +1,10 @@
 const m3uUrl = 'https://iptv-org.github.io/iptv/index.m3u';
+const corsProxy = 'http://localhost:8080/';  // Alterado para o seu proxy local
 
 async function validarLink(url) {
     try {
-        const response = await fetch(url, { method: 'HEAD' });
+        // Usando o proxy local para validar o link
+        const response = await fetch(corsProxy + url, { method: 'HEAD' });
         return response.ok;
     } catch {
         return false;
@@ -11,7 +13,8 @@ async function validarLink(url) {
 
 async function carregarCanais() {
     try {
-        const response = await fetch(m3uUrl);
+        // Usando o proxy local para carregar o arquivo M3U
+        const response = await fetch(corsProxy + m3uUrl);
         const data = await response.text();
 
         const canais = data.split('\n')
